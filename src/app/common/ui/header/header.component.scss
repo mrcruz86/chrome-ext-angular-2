@@ -1,0 +1,75 @@
+.header__container {
+  position: relative;
+  padding: 0 12px;
+  background-color: #000f40;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 52px;
+
+  a {
+    position: relative;
+    display: block;
+    text-decoration: none;
+    color: white;
+    opacity: 0.50;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
+  .left-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .right-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+.header__branding {
+
+  a {
+    opacity: 1;
+    outline: none;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  img {
+    height: 35px;
+    width: auto;
+  }
+}
+
+.header__upgrade {
+
+  .upgrade__messaging {
+    color: #fff;
+  }
+
+  .upgrade__button {
+    padding: 4px;
+    cursor: pointer;
+    opacity: 0.8;
+    font-weight: bold;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+
+.salesforce-wrapper {
+  img {
+    height: 20px;
+    width: auto;
+  }
+}

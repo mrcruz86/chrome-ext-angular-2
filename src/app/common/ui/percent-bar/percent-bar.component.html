@@ -1,0 +1,11 @@
+<span class="title">Traffic Distribution</span>
+<div class="percent-bar"></div>
+<div class="legend" *ngIf="!empty">
+  <ul>
+    <li *ngFor="let d of data; let i = index;" [ngStyle]="{'color': colors[i]}">{{d.name}}</li>
+    <!-- <li *ngFor="let item of data; let i = index;" [ngStyle]="{'color': colors[i]}">{{item}}</li> -->
+  </ul>
+</div>
+<div class="empty-legend" *ngIf="empty">
+  <p>No current up to date data.</p>
+</div>

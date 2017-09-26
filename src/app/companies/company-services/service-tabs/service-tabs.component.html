@@ -1,0 +1,40 @@
+<div class="service-tab__wrapper">
+  <div class="service-tab__service-info">
+    <div class="service-tab__tab" [ngClass]="{ 'active-tab': isOpen }" (click)="toggleTab($event)">
+      <div class="left-wrapper tab-wrapper">
+        <img class="arrow" [ngClass]="{ 'animate-arrow-down': isOpen, 'animate-arrow-right': !isOpen }" src="./assets/images/icons/arrow-right/black.svg" alt="">
+        <span class="total-circle {{service.shortname}}">{{service.total_vendors || service.vendors.length}}</span>
+        <span class="title">{{service.name}}</span>
+      </div>
+      <div class="right-rapper tab-wrapper" *ngIf="service.tier && ['saas', 'apm'].indexOf(service.shortname) < 0">
+        <span class="green">{{service.tier | tier:true:false}}</span>
+        <span class="green-square green">{{service.tier | tier:false:true}}</span>
+      </div>
+    </div>
+    <div class="service-tab__content" [ngClass]="{ 'animate-tab-open': isOpen, 'animate-tab-close': !isOpen }">
+      <ul class="service-list" *ngIf="service">
+        <li *ngFor="let vendor of service.vendors | limitArray:3; let i = index;">
+          <div class="list-item">
+            <a (click)="vendorClick(vendor)"><img [src]="vendor.icon ? vendor.icon : 'assets/images/vendorlogos/cloudrupt.jpg'" alt=""></a>
+            <p *ngIf="!vendor.self_hosted && vendor.tier && ['saas', 'apm'].indexOf(service.shortname) < 0 && (user?.user_type !== 'free' || user?.in_trial)">
+              <span class="spend">{{vendor.tier | tier:true:false}}</span>
+              <span class="green-square green">{{vendor.tier | tier:false:true}}</span>
+            </p>
+            <p *ngIf="user?.user_type === 'free' && !user?.in_trial && !vendor.id">Upgrade</p>
+            <p *ngIf="vendor.self_hosted">Self Hosted</p>
+            <p class="vendor__name" *ngIf="!vendor.self_hosted && (!vendor.tier || ['saas', 'apm'].indexOf(service.shortname) > -1) || (user?.user_type === 'free' && !user?.in_trial && !vendor.self_hosted)">{{vendor.name}}</p>
+          </div>
+        </li>
+        <li *ngIf="service.total_vendors - 3 > 0 || service.vendors.length > 3">
+          <div class="list-item open-in-app">
+            <a href="{{url + 'companies/' + company.id}}" target="_blank"><img src="./assets/images/icons/to-app/black.svg" alt=""></a>
+            <p>View {{service.total_vendors - 3 || service.vendors.length - 3}} more in app</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="service-tab__vendor-info" [@toggleVendorInfo]="vendorInfo.state">
+    <app-vendor-info [company]="company" [service]="service" [vendor]="vendor"></app-vendor-info>
+  </div>
+</div>

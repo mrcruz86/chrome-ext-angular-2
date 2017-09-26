@@ -1,0 +1,21 @@
+<div class="app__container" *ngIf="company && !isLoading">
+  <app-header [url]="env.url" [companyId]="company.id" [user]="user"></app-header>
+  <app-companies [company]="company" [services]="services" [traffic]="traffic" [report]="site.report" [user]="user"></app-companies>
+</div>
+<div class="main-background loading" *ngIf="isLoading">
+  <app-header [loading]="isLoading"></app-header>
+  <img src="./assets/images/ce_loader_screen.svg" alt="">
+</div>
+<div class="main-background login" *ngIf="!company && !isAuth && !isLoading">
+  <header>
+    <div class="header__wrapper">
+      <img src="./assets/images/logo-white-text.svg" alt="">
+    </div>
+  </header>
+  <div class="slogin">
+    <h2>Know More.</h2> <h2>Win More.</h2>
+  </div>
+  <img class="main-image" src="./assets/images/mobile-front-macbook.png" alt="">
+  <button type="button" name="button" (click)="goToLinkedInAuth()">Free Sign Up With <img src="./assets/images/li_logo_white.svg" alt=""></button>
+</div>
+<app-faq-btn></app-faq-btn>

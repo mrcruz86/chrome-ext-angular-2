@@ -1,0 +1,7 @@
+<div class="vendor-info">
+  <h2>{{company?.name}} uses {{vendor?.name}} <span class="uppercase">{{service?.shortname}}</span> for their:</h2>
+  <div class="labels">
+    <app-app-labels [labels]="vendorInfo?.labels"></app-app-labels>
+  </div>
+  <app-vendor-hosts [hosts]="vendorInfo?.domains"></app-vendor-hosts>
+</div>

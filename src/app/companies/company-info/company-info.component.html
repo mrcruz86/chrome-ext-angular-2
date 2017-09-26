@@ -1,0 +1,42 @@
+<div class="company-info__container panel">
+  <div class="company-info__wrapper container-row">
+    <div class="company-info__logo container-col">
+      <div class="logo-wrapper">
+        <a href="{{url + 'companies/' + company.id}}" target="_blank">
+          <img [src]="company.logo" alt="">
+        </a>
+      </div>
+      <div class="company-info__social" *ngIf="company.social">
+        <ul class="btn-grp">
+          <li class="btn" *ngFor="let item of company.social | objectToArray">
+            <a href="{{item.url}}" target="_blank"><i class="fa fa-{{item.name}}"></i></a>
+          </li>
+        </ul>
+      </div>
+      <div class="company-info__no-info" *ngIf="!company.spend && !company.social">
+        <p>This site doesn't have a company yet.</p>
+      </div>
+    </div>
+
+    <div class="company-info__basic container-col">
+      <div class="container-row">
+        <div class="company-info__info">
+          <a href="{{url + 'companies/' + company.id}}" target="_blank">
+            <h1>{{company.name}}</h1>
+          </a>
+          <p class="company-info__location" *ngIf="company.location"><span class="title" *ngIf="company.location.city">{{company.location.city}},</span> <span class="title">{{company.location.state}}</span></p>
+          <p class="company-info__related-companies" *ngIf="company.subsidiaries">
+            <span class="title">{{company.subsidiaries.length}}</span>
+            <span class="title">Subsidiaries</span>
+            <a href="{{url + 'companies/' + company.id}}" target="_blank"><img src="./assets/images/icons/to-app/black.svg" alt=""></a>
+          </p>
+        </div>
+        <div class="company-info__stats">
+          <p class="green" *ngIf="company.spend">{{company.spend | spend}}/mo</p>
+          <app-percent-bar [data]="traffic | objectToArray"></app-percent-bar>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

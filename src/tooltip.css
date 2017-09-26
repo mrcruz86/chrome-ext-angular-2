@@ -1,0 +1,276 @@
+#ILYtooltip {
+  all: unset;
+  min-height: 30px;
+  background-color: rgba(51,51,51,0.9);
+  color: #fff;
+  border-radius: 5px;
+  border: 2px solid #fff;
+  padding: 5px;
+  z-index: 2222222222;
+  -webkit-box-shadow: 0px 0px 28px -6px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 0px 28px -6px rgba(0,0,0,0.75);
+  box-shadow: 0px 0px 28px -6px rgba(0,0,0,0.75);
+  text-overflow: ellipsis;
+  cursor: pointer;
+  display: none;
+}
+
+#ILYtooltip .ILYvendorLogo {
+  all: unset;
+  width: 30px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border-radius: 5px !important;
+  vertical-align: middle;
+  text-align: center;
+  line-height: 30px;
+}
+
+#ILYtooltip .ILYvendorLogoContainer {
+  all: unset;
+  width: 30px !important;
+  height: 30px !important;
+  background-color: #fff;
+  margin: 5px !important;
+  padding: 0 !important;
+  border-radius: 5px !important;
+  display: block;
+  box-sizing: content-box !important;
+  -webkit-box-sizing: content-box !important;
+  -webkit-animation: fadein 1s; /* Safari, Chrome and Opera > 12.1 */
+       -moz-animation: fadein 1s; /* Firefox < 16 */
+        -ms-animation: fadein 1s; /* Internet Explorer */
+         -o-animation: fadein 1s; /* Opera < 12.1 */
+            animation: fadein 1s;
+}
+
+#ILYtooltip .ILYgear {
+  all: unset;
+  position: absolute;
+  right: -5px;
+  bottom:-5px;
+  width: 15px;
+  height: 15px;
+  display: none;
+  border-radius: 5px;
+}
+
+#ILYclose {
+  all: unset;
+  position: absolute;
+  right: -5px;
+  top: -10px;
+  width: 15px;
+  height: 15px;
+  display: none;
+  z-index: 3333333333;
+}
+
+
+/**
+ * Tooltip Styles
+ */
+
+/* Base styles for the element that has a tooltip */
+[data-tooltipILY],
+.ILYtooltip {
+  position: relative;
+  cursor: pointer;
+}
+
+/* Base styles for the entire tooltip */
+[data-tooltipILY]:before,
+[data-tooltipILY]:after,
+.ILYtooltip:before,
+.ILYtooltip:after {
+  position: absolute;
+  visibility: hidden;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+  opacity: 0;
+  -webkit-transition:
+    opacity 0.2s ease-in-out,
+    visibility 0.2s ease-in-out,
+    -webkit-transform 0.2s cubic-bezier(0.71, 1.7, 0.77, 1.24);
+  transition:
+    opacity 0.2s ease-in-out,
+    visibility 0.2s ease-in-out,
+    transform 0.2s cubic-bezier(0.71, 1.7, 0.77, 1.24);
+  -webkit-transform: translate3d(0, 0, 0);
+  transform:         translate3d(0, 0, 0);
+  pointer-events: none;
+}
+
+/* Show the entire tooltip on hover and focus */
+[data-tooltipILY]:hover:before,
+[data-tooltipILY]:hover:after,
+[data-tooltipILY]:focus:before,
+[data-tooltipILY]:focus:after,
+.ILYtooltip:hover:before,
+.ILYtooltip:hover:after,
+.ILYtooltip:focus:before,
+.ILYtooltip:focus:after {
+  visibility: visible;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+  opacity: 1;
+}
+
+/* Base styles for the tooltip's directional arrow */
+.ILYtooltip:before,
+[data-tooltipILY]:before {
+  z-index: 1001;
+  border: 6px solid transparent;
+  background: transparent;
+  content: "";
+}
+
+/* Base styles for the tooltip's content area */
+.ILYtooltip:after,
+[data-tooltipILY]:after {
+  z-index: 1000;
+  padding: 8px;
+  width: auto;
+  background-color: #000;
+  background-color: hsla(0, 0%, 20%, 0.9);
+  color: #fff;
+  content: attr(data-tooltipILY);
+  font-size: 14px;
+  white-space: nowrap;
+  line-height: 1.2;
+  border-radius: 5px;
+}
+
+/* Directions */
+
+/* Top (default) */
+[data-tooltipILY]:before,
+[data-tooltipILY]:after,
+.ILYtooltip:before,
+.ILYtooltip:after,
+.ILYtooltip-top:before,
+.ILYtooltip-top:after {
+  bottom: 100%;
+  left: 50%;
+}
+
+[data-tooltipILY]:before,
+.ILYtooltip:before,
+.ILYtooltip-top:before {
+  margin-left: -6px;
+  margin-bottom: -12px;
+  border-top-color: #000;
+  border-top-color: hsla(0, 0%, 20%, 0.9);
+}
+
+/* Horizontally align top/bottom tooltips */
+[data-tooltipILY]:after,
+.ILYtooltip:after,
+.ILYtooltip-top:after {
+  margin-left: -80px;
+}
+
+[data-tooltipILY]:hover:before,
+[data-tooltipILY]:hover:after,
+[data-tooltipILY]:focus:before,
+[data-tooltipILY]:focus:after,
+.ILYtooltip:hover:before,
+.ILYtooltip:hover:after,
+.ILYtooltip:focus:before,
+.ILYtooltip:focus:after,
+.ILYtooltip-top:hover:before,
+.ILYtooltip-top:hover:after,
+.ILYtooltip-top:focus:before,
+.ILYtooltip-top:focus:after {
+  -webkit-transform: translateY(-12px);
+  -ms-transform:         translateY(-12px);
+      transform:         translateY(-12px);
+}
+
+/* Left */
+.tooltip-left:before,
+.tooltip-left:after {
+  right: 100%;
+  bottom: 50%;
+  left: auto;
+}
+
+.ILYtooltip-left:before {
+  margin-left: 0;
+  margin-right: -12px;
+  margin-bottom: 0;
+  border-top-color: transparent;
+  border-left-color: #000;
+  border-left-color: hsla(0, 0%, 20%, 0.9);
+}
+
+.ILYtooltip-left:hover:before,
+.ILYtooltip-left:hover:after,
+.ILYtooltip-left:focus:before,
+.ILYtooltip-left:focus:after {
+  -webkit-transform: translateX(-12px);
+  -ms-transform:         translateX(-12px);
+      transform:         translateX(-12px);
+}
+
+/* Bottom */
+.ILYtooltip-bottom:before,
+.ILYtooltip-bottom:after {
+  top: 100%;
+  bottom: auto;
+  left: 50%;
+}
+
+.ILYtooltip-bottom:before {
+  margin-top: -12px;
+  margin-bottom: 0;
+  border-top-color: transparent;
+  border-bottom-color: #000;
+  border-bottom-color: hsla(0, 0%, 20%, 0.9);
+}
+
+.ILYtooltip-bottom:hover:before,
+.ILYtooltip-bottom:hover:after,
+.ILYtooltip-bottom:focus:before,
+.ILYtooltip-bottom:focus:after {
+  -webkit-transform: translateY(12px);
+  -ms-transform:         translateY(12px);
+      transform:         translateY(12px);
+}
+
+/* Right */
+.ILYtooltip-right:before,
+.ILYtooltip-right:after {
+  bottom: 50%;
+  left: 100%;
+}
+
+.ILYtooltip-right:before {
+  margin-bottom: 20px;
+  margin-left: -12px;
+  border-top-color: transparent;
+  border-right-color: #000;
+  border-right-color: hsla(0, 0%, 20%, 0.9);
+}
+
+.ILYtooltip-right:hover:before,
+.ILYtooltip-right:hover:after,
+.ILYtooltip-right:focus:before,
+.ILYtooltip-right:focus:after {
+  -webkit-transform: translateX(12px);
+  -ms-transform:         translateX(12px);
+      transform:         translateX(12px);
+}
+
+/* Move directional arrows down a bit for left/right tooltips */
+.ILYtooltip-left:before,
+.ILYtooltip-right:before {
+  top: 3px;
+}
+
+/* Vertically center tooltip content for left/right tooltips */
+.ILYtooltip-left:after,
+.ILYtooltip-right:after {
+  margin-left: 0;
+  margin-bottom: -16px;
+}

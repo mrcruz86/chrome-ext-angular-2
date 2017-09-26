@@ -1,0 +1,13 @@
+.watch-wrapper {
+  i {
+    font-size: 20px;
+    margin-left: 10px;
+    color: white;
+    cursor: pointer;
+    opacity: 0.8;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+}

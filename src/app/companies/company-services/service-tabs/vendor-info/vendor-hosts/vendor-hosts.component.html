@@ -1,0 +1,8 @@
+<div class="vendor-hosts">
+  <h2>Hostnames:</h2>
+  <ul class="vendor-hosts__list">
+    <li *ngFor="let domain of hosts; let f = first;">
+      <app-vendor-domain [domain]="domain" [first]="f"></app-vendor-domain>
+    </li>
+  </ul>
+</div>

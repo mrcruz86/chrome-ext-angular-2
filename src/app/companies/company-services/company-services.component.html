@@ -1,0 +1,6 @@
+<div class="company-services__wrapper panel">
+  <div class="progress-bar" *ngIf="report.status_code && report.status_code < 2">
+    <p><i class="fa fa-refresh rotate"></i> Analyzing and Creating Site Intelligence</p>
+  </div>
+  <app-service-tabs *ngFor="let service of services" [service]="service" [company]="company" [user]="user"></app-service-tabs>
+</div>

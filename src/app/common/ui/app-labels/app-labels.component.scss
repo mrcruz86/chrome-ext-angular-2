@@ -1,0 +1,15 @@
+@import '../../../../styles/vars.scss';
+
+.app-labels__list {
+  list-style: none;
+  padding: 0px;
+
+  li {
+    display: inline-flex;
+    margin: 2px;
+    padding: 4px 8px;
+    border-radius: 20px;
+    color: #fff;
+    background-color: $primary;
+  }
+}

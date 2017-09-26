@@ -1,0 +1,48 @@
+{
+  "name": "Intricately",
+  "short_name": "Intricately provides deep real-time sales and market intelligence into the CDN (Content Delivery), Cloud Security: DDoS (Distributed Denial of Service) / WAF (Web Application Firewall), DNS, GTM (Traffic Management / Load Balancing), APM (Application Performance Monitoring), Private and Public Cloud Hosting and SaaS (Software-as-a-Service) Markets.",
+  "version": "3.3.0",
+  "manifest_version": 2,
+  "description": "Spend intelligence on CDN, DDoS, WAF, DNS, GTM (Load Balancing), APM (Performance Monitoring), Hosting and SaaS markets.",
+  "icons": {
+    "16": "assets/images/icon16.png",
+    "48": "assets/images/icon48.png",
+    "128": "assets/images/icon128.png"
+  },
+  "browser_action": {
+    "default_icon": {
+      "19": "assets/images/icon19.png",
+      "38": "assets/images/icon38.png"
+    },
+    "default_popup": "index.html"
+  },
+  "background": {
+    "persistent": false,
+    "scripts": [
+      "background.js"
+    ]
+  },
+  "options_page": "options.html",
+  "content_scripts": [
+    {
+      "matches": ["https://*/*", "http://*/*"],
+      "exclude_matches": ["https://*.intricately.com/*", "http://*.intricately.com/*"],
+      "js": ["jquery-1.11.3.min.js", "content.js"],
+      "css": ["tooltip.css"],
+      "run_at": "document_end"
+    }
+  ],
+  "web_accessible_resources": [
+    "assets/images/*",
+    "*"
+  ],
+  "permissions": [
+    "<all_urls>",
+    "tabs",
+    "cookies",
+    "*://*.intricately.com/*",
+    "storage",
+    "webNavigation"
+  ],
+  "content_security_policy": "script-src 'self' 'unsafe-eval' https://*.pendo.io https://*.intercom.io https://*.intercomcdn.com; object-src 'self'"
+}

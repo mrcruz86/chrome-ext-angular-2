@@ -1,0 +1,209 @@
+@import 'styles/vars.scss';
+
+/* You can add global styles to this file, and also import other style files */
+
+// Layout
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 520px;
+  min-height: 555px;
+  overflow: hidden;
+}
+
+body {
+  background-color: #FAFBFC;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.panel {
+  margin-bottom: 11px;
+  background-color: #ffffff;
+  border-radius: 3px;
+  box-shadow: 0 1px 3px 0 rgba(0,0,0,0.12), 0 1px 2px 0 rgba(0,0,0,0.24);
+}
+
+.panel-footer {
+  padding: 8px;
+  border-top: 1px solid rgba(0,0,0,0.1);
+  background-color: rgba(0,15,63,0.05);
+  box-shadow: inset 0 -1px 0 0 rgba(0,0,0,0.12);
+}
+
+.container-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.container-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.left-wrapper {
+  img {
+    margin-right: 6px;
+  }
+
+  span {
+    margin-right: 6px;
+  }
+}
+
+.left-align {
+  text-align: left;
+}
+
+.right-wrapper {
+  span {
+    margin-left: 2px;
+  }
+}
+
+.right-align {
+  text-align: right;
+}
+
+.total-circle {
+  height: 24px;
+  width: 24px;
+  border: 1px solid rgba(0,0,0,0.1);
+  border-radius: 24px;
+  font-size: 12px;
+  font-weight: 400;
+  color: white;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+
+  &.children {
+    background-color: $black;
+  }
+
+  &.cdn {
+    background-color: $cdn;
+  }
+
+  &.gtm {
+    background-color: $gtm;
+  }
+
+  &.ddos {
+    background-color: $ddos;
+  }
+
+  &.ovp {
+    background-color: $ovp;
+  }
+
+  &.apm {
+    background-color: $apm;
+  }
+
+  &.hosting {
+    background-color: $hosting;
+  }
+
+  &.dns {
+    background-color: $dns;
+  }
+
+  &.saas {
+    background-color: $saas;
+  }
+}
+
+// Typography
+p.green {
+  color: $green;
+}
+
+span {
+  font-size: inherit;
+
+  &.green {
+    color: $green;
+  }
+
+  &.green-square {
+    width: 17px;
+    height: 17px;
+    border: 1px solid $green;
+    border-radius: 2px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &.title {
+    opacity: 0.5;
+  }
+
+  &.plus-centered {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+// Buttons
+
+.btn-grp {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: stretch;
+
+  .btn {
+    border: 1px solid rgba(0,0,0,0.12);
+    border-right: none;
+  }
+
+  .btn:first-child {
+    border-top-left-radius: 2px;
+    border-bottom-left-radius: 2px;
+  }
+
+  .btn:last-child {
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
+    border-right: 1px solid rgba(0,0,0,0.12);
+  }
+}
+
+// Animations
+.rotate {
+  animation: rotate 1000ms linear infinite;
+}
+
+@keyframes rotate {
+  0% {transform: rotate(0deg);},
+  100% {transform: rotate(360deg);}
+}
+
+// Intercom
+
+#intercom-frame {
+  display: none;
+}
+
+#intercom-container {
+  display: none;
+}

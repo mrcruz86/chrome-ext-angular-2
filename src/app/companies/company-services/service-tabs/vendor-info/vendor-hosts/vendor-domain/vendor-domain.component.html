@@ -1,0 +1,23 @@
+<div class="vendor-domain">
+  <div class="domain-tab" (click)="toggleSubdomains()">
+    <img class="arrow" src="./assets/images/icons/arrow-right/black.svg" alt="" [@toggleSubdomainsArrow]="subdomain.state">
+    <div class="subdomain__count">
+      {{domain.hosts?.length}}
+    </div>
+    <p>{{domain?.name}}</p>
+    <div class="line">
+      <span></span>
+    </div>
+  </div>
+  <div class="labels">
+    <app-app-labels [labels]="domain?.labels"></app-app-labels>
+  </div>
+  <div class="subdomains" [@toggleSubdomains]="subdomain.state">
+    <ul class="subdomains__list">
+      <li *ngFor="let subdomain of domain?.hosts">
+        <p>{{subdomain.name}}<span>.{{domain.name}}</span></p>
+        <app-app-labels [labels]="subdomain?.labels"></app-app-labels>
+      </li>
+    </ul>
+  </div>
+</div>

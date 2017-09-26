@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="21px" viewBox="0 0 24 21" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 41.2 (35397) - http://www.bohemiancoding.com/sketch -->
+    <title>Icon/Preferences/Black - Disabled</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="CE-2.0" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="1">
+        <g id="CE-2.0-•-Main" transform="translate(-1263.000000, -88.000000)">
+            <g id="Design" transform="translate(946.000000, 65.000000)">
+                <g id="Header">
+                    <g id="Icon/ToApp/White---Disabled" transform="translate(317.000000, 22.000000)">
+                        <g id="Icon/ToApp/White">
+                            <g id="To-App">
+                                <rect id="Icon-Bounding-Box" x="0" y="0" width="24" height="24"></rect>
+                                <path d="M20.6047515,3.501 L17.5,3.501 L17.5,1.501 L24,1.501 L24,8.001 L22,8.001 L22,4.93441329 L14.2907464,12.7236483 L12.8692536,11.3167517 L20.6047515,3.501 Z M2,20 L2,6 L16.9996,6 L16.9996,4 L0,4 L0,22 L22,22 L22,9.0004 L20,9.0004 L20,20 L2,20 Z" fill="#FFFFFF"></path>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

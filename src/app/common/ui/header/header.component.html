@@ -1,0 +1,29 @@
+<div class="header__container">
+  <div class="left-wrapper">
+    <div class="header__branding">
+      <a href="{{url + 'companies/' + companyId}}" target="_blank">
+        <img src="./assets/images/logo-pink.svg" alt="">
+      </a>
+    </div>
+    <div class="header__upgrade" *ngIf="!loading">
+      <div class="upgrade__messaging" *ngIf="user?.user_type === 'free' || user?.in_trial">
+        <p *ngIf="user?.in_trial">
+          Trial expires
+          <span>
+            {{ user?.trial_expires_at | amTimeAgo }}
+          </span>
+        </p>
+        <p><button class="upgrade__button" type="button" (click)="goToWebApp()">Upgrade Now!</button></p>
+      </div>
+
+    </div>
+  </div>
+  <div class="right-wrapper" *ngIf="!loading">
+    <div class="salesforce-wrapper" *ngIf="!user.access_tokens.salesforce">
+      <a href="{{url + 'watchlists'}}" target="_blank"><img src="./assets/images/salesforce-icon.svg" alt=""></a>
+    </div>
+    <div class="favorite-wrapper">
+      <app-follow-btn [companyId]="companyId"></app-follow-btn>
+    </div>
+  </div>
+</div>
